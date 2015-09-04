@@ -12,8 +12,7 @@
     
     [self.view addSubview:btn];
     
-//UiLabel...
-
+ 
   // Uilabel
     
     UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(30, 300, 140, 40)];
@@ -23,6 +22,39 @@
     [lbl setFontHeleveticaNueueBold:17];
     
     [self.view addSubview:lbl];
+    
+    //UitableView
+    //1
+    -(UITableView *)makeTableView
+{
+  CGFloat x = 0;
+  CGFloat y = 50;
+  CGFloat width = self.view.frame.size.width;
+  CGFloat height = self.view.frame.size.height - 50;
+  CGRect tableFrame = CGRectMake(x, y, width, height);
+
+  UITableView *tableView = [[UITableView alloc]initWithFrame:tableFrame style:UITableViewStylePlain];
+
+  tableView.rowHeight = 45;
+  tableView.sectionFooterHeight = 22;
+  tableView.sectionHeaderHeight = 22;
+  tableView.scrollEnabled = YES;
+  tableView.showsVerticalScrollIndicator = YES;
+  tableView.userInteractionEnabled = YES;
+  tableView.bounces = YES;
+
+  tableView.delegate = self;
+  tableView.dataSource = self;
+
+  return tableView;
+}
+    
+    //2
+    tableView = [[[UITableView alloc] initWithFrame:CGRectMake(...) style:UITableViewStylePlain] autorelease];
+tableView.dataSource = self;
+tableView.delegate = self;
+
+[self.view addSubview:tableView];
     
     //Table View Delegate Methods
     - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
