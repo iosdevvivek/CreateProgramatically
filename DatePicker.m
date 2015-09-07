@@ -1,0 +1,15 @@
+-// uiDatePicker 
+-
+-self.datePicker = [[UIDatePicker alloc] initWithFrame:CGRectZero];
+-[self.datePicker setDatePickerMode:UIDatePickerModeDate];
+-[self.datePicker addTarget:self action:@selector(onDatePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
+-
+-Then link the datePicker to the textfield inputView:
+-
+-self.textField.inputView = self.pickerView;
+-
+--(void)onDatePickerValueChanged:(UIDatePicker *)datePicker
+-{
+-self.textField.text = [self.dateFormatter stringFromDate:datePicker.date];
+-}
+-
