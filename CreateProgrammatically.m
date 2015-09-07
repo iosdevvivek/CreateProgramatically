@@ -2,7 +2,7 @@
 
 
 
-// uibutton 
+// uibutton
 
 
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(50, 150, 100, 40)];
