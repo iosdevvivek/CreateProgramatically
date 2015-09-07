@@ -8,4 +8,5 @@
   // Execute the query.
         [self.dbManager executeQuery:query];
        
-       
+ //Monthly Data
+  NSString *query = [NSString stringWithFormat:@"SELECT * FROM flowinfo WHERE date BETWEEN datetime('now', '-6 days') AND datetime('now', 'localtime') AND socialid = \'%@\' order by date",[[NSUserDefaults standardUserDefaults] valueForKey:USEREMAIL]];
